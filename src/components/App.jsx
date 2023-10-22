@@ -3,6 +3,7 @@ import ContactForm from './ContactForm/ContactForm.jsx'
 import Filter from "./Filter/Filter.jsx";
 import ContactList from "./ContactList/ContactList.jsx";
 import { nanoid } from 'nanoid';
+import css from './App.module.css'
 
 class App extends Component {
   state = {
@@ -50,11 +51,11 @@ class App extends Component {
   return (
     <div>
       <div>
-        <h1>Phonebook</h1>
+        <h2 className={css.header}>Phonebook</h2>
       <ContactForm onSubmit={this.handleSubmit}/>
       </div>
       <div>
-        <h2>Contacts</h2>
+        <h2 className={css.header}>Contacts</h2>
       {contacts.length > 0 ? (
          <Filter value={filter} onChange={this.changeFilter} />
       ) : ( <span>Your phonebook is empty. Add first contact!</span>)}
